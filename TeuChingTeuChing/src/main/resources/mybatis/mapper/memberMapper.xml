@@ -91,7 +91,7 @@
 	</select>
  	
  	<select id="selectTopTrainer" resultMap="trainerResult">
- 		<![CDATA[select @rownum:=@rownum+1, t.* from (select * from TR_TRAINER t order by tr_like desc) t, (SELECT @rownum:=0) TMP where @rownum < 4]]>
+ 		<![CDATA[select @rownum:=@rownum+1, t.* from (select * from TR_TRAINER t order by tr_like desc) t, (SELECT @rownum:=0) TMP where @rownum < 3]]>
  	</select>
  	
  	
