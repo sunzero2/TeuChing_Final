@@ -141,7 +141,6 @@ public class MemberController {
 	*/
 	@RequestMapping("/member/logout.do")
 	public ModelAndView logout(HttpSession session) {
-
 		ModelAndView mav = new ModelAndView();
 
 		if (session != null) {
@@ -176,7 +175,6 @@ public class MemberController {
 	@RequestMapping("/member/mjoin.do")
 	public ModelAndView mjoin(String data) {
 		ModelAndView mav = new ModelAndView();
-
 		if (data.equals("member")) {
 			mav.setViewName("account/joinformm");
 		} else {
@@ -195,7 +193,6 @@ public class MemberController {
 	@RequestMapping("/member/joinmemberimple.do")
 	public ModelAndView joinMemberImple(@RequestParam Map<String, Object> commandMap) throws SQLException {
 		ModelAndView mav = new ModelAndView();
-
 		int res = ms.joinMember(commandMap);
 		if (res < 1) {
 			mav.addObject("msg", "회원가입에 실패하였습니다.");
@@ -216,7 +213,6 @@ public class MemberController {
 	@RequestMapping("/member/jointrainerimple.do")
 	public ModelAndView joinTrainerImple(@RequestParam Map<String, Object> commandMap) throws SQLException {
 		ModelAndView mav = new ModelAndView();
-
 		int res = ms.joinTrainer(commandMap);
 		if (res < 1) {
 			mav.addObject("msg", "회원가입에 실패하였습니다.");
@@ -237,7 +233,6 @@ public class MemberController {
 	@RequestMapping("/member/mjoinemailCheck.do")
 	public ModelAndView m_joinEmailCheck(@RequestParam Map<String, Object> commandMap)
 			throws SQLException {
-
 		ModelAndView mav = new ModelAndView();
 		String mailfor ="m_join";
 		String path = "http://52.78.116.59:8080/teuching";
@@ -264,7 +259,7 @@ public class MemberController {
 		// 파일 태그
 		String fileTag = "file";
 	    // 업로드 파일이 저장될 경로
-		String filePath = root + "resources/";
+		String filePath = root + "resources/upload/profileImg/";
 		// 파일 이름	
 		MultipartFile file = mtf.getFile(fileTag);
 		String filetype = StringUtils.getFilenameExtension(file.getOriginalFilename());
@@ -284,7 +279,6 @@ public class MemberController {
 		commandMap.put("prefer1", preMap1);
 		commandMap.put("prefer2", preMap2);
 		commandMap.put("prefer3", preMap3);
-		
 		
 		String keyword = (String)commandMap.get("keyword1");
 		
@@ -327,7 +321,6 @@ public class MemberController {
 	@RequestMapping(value = "/member/nickchk.do", produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String nickChk(HttpServletRequest request) throws SQLException {
-
 		String nickname = request.getParameter("nickname");
 		int result = ms.nickChk(nickname);
 		return Integer.toString(result);
@@ -342,8 +335,6 @@ public class MemberController {
 	@RequestMapping(value = "/member/emailchk.do", produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String emailChk(@RequestParam Map<String, Object> data) throws SQLException {
-
-
 		data.put("table", "TR_MEMBER"); 
 
 		int result = ms.emailChk(data); 
@@ -365,19 +356,17 @@ public class MemberController {
 	@RequestMapping("/member/findpw.do")
 	public ModelAndView findpw(@RequestParam Map<String, Object> commandMap, HttpServletRequest request)
 			throws SQLException {
-
 		ModelAndView mav = new ModelAndView();
 		String path = "http://52.78.116.59:8080/teuching";
-
 		String mailfor = "";
 		String pw = "";		//랜덤 임시 비밀번호 생성
+		
 		for (int i = 0; i < 12; i++) {
 			pw += (char) ((Math.random() * 26) + 97);
 		}
 		
 		commandMap.put("table", "TR_MEMBER");  //비교 테이블 값 넣기
 		int result = ms.emailChk(commandMap);	// 테이블 조회
-		
 		commandMap.put("password", pw);	// 임시 비밀번호 담기
 		
 		if (result == 0) {
@@ -394,28 +383,7 @@ public class MemberController {
 			commandMap.put("urlPath", path); 
 			ms.mailSending(commandMap, mailfor);
 		}
-		  
-		 
 		mav.setViewName("redirect:http://52.78.116.59:8080/teuching");
-
 		return mav;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

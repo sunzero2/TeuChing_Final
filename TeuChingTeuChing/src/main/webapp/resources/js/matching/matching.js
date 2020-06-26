@@ -168,7 +168,7 @@ function createTable() {
 			// 이미지 담을 div 생성
 			var image = document.createElement('div');
 			image.className = 'img rounded-circle mb-2';
-			image.style.backgroundImage = 'url(https://teuching-upload.s3.ap-northeast-2.amazonaws.com/profile/' + pList[i].trPhoto + ')';
+			image.style.backgroundImage = 'url(http://52.78.116.59:8080/teuching/upload/profileImg/' + pList[i].trPhoto + ')';
 			image.style.width = '116px';
 			image.style.height = '141px';
 			image.style.marginTop = '54px';

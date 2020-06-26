@@ -80,7 +80,7 @@ public class PostController {
 		for(MultipartFile mf : images) {
 			if(!mf.getOriginalFilename().equals("")) {
 				File_Upload upload = new File_Upload();
-				String savePath = root + "resources/";
+				String savePath = root + "resources/upload/";
 				String originFileName = mf.getOriginalFilename();
 					
 				UUID uuid = UUID.randomUUID();

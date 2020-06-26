@@ -115,7 +115,7 @@
 									</div>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(https://teuching-upload.s3.ap-northeast-2.amazonaws.com/profile/${trainer.photo})">
+											style="background-image: url(http://52.78.116.59:8080/teuching/resources/upload/profileImg/${trainer.photo})">
 										</div>
 										<div class="ml-4">
 											<p class="name"

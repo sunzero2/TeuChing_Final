@@ -538,7 +538,7 @@ function imgLoad(img) {
       var imgDiv = document.createElement('img');
       imgDiv.className="avatar img-circle img-thumbnail";
       imgDiv.alt="avatar";
-      imgDiv.src = "https://teuching-upload.s3.ap-northeast-2.amazonaws.com/profile/" + img;
+      imgDiv.src = "http://52.78.116.59:8080/teuching/uplaod/profileImg/" + img;
       div.append(imgDiv);
    }, 1000);
 }

@@ -170,7 +170,7 @@ public class ManagerController {
 		for (MultipartFile mf : files) {
 			UUID uuid = UUID.randomUUID();
 			if (mf.getSize() > 0) {
-				String savepath = root + "resources/";
+				String savepath = root + "resources/upload/";
 				String type = "";
 				String origin_filename = mf.getOriginalFilename();
 				File_Upload file = new File_Upload();

@@ -151,7 +151,7 @@
 						<h2 class="mb-3" id="trainername"></h2>
 						<div class="about-author d-flex">
 							<div class="bio align-self-md-center mr-5" id="box">
-								<img src="https://teuching-upload.s3.ap-northeast-2.amazonaws.com/profile/${Trainer.photo}"
+								<img src="http://52.78.116.59:8080/teuching/upload/profileImg/${Trainer.photo}"
 									alt="${Trainer.photo}" class="img-fluid mb-4" id="photo">
 							</div>
 							<div class="desc align-self-md-center">
