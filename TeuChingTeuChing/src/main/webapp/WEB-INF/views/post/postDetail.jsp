@@ -55,7 +55,7 @@
 						<div class="authorWrapper">
 							<hr>
 							<div class="authorTitle">Author</div>
-								<img class="authorImg" src="http://52.78.116.59:8080/teuching/upload/profileImg/${data.post.trPhoto}">
+								<img class="authorImg" src="http://52.78.116.59:8080/teuching/resources/upload/profileImg/${data.post.trPhoto}">
 							<div class="details authorInfo">
 								<div class="job">Trainer</div>
 								<a class="author" href="http://52.78.116.59:8080/teuching/profile/review.do?trainerEmail=${data.post.trEmail}">${data.post.trainerName}</a>
