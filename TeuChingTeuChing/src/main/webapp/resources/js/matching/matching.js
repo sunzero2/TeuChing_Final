@@ -71,20 +71,24 @@ document.getElementById("inputBtn").addEventListener('click', function(el) {
 	var input = document.getElementById("keywordInput");
 	var option = document.getElementById("searchOption");
 	
-	$.ajax({
-		url : "http://52.78.116.59:8080/teuching/matching/searchword.do",
-		data : {
-			"input" : input.value,
-			"option" : option.value
-		},
-		success : function(v) {
-			for(i = 0; i < v.length; i++) {
-				pList.push(v[i]);
+	if(input.value == '') {
+		alert("검색어를 입력해주세요.");
+	} else {
+		$.ajax({
+			url : "http://52.78.116.59:8080/teuching/matching/searchword.do",
+			data : {
+				"input" : input.value,
+				"option" : option.value
+			},
+			success : function(v) {
+				for(i = 0; i < v.length; i++) {
+					pList.push(v[i]);
+				}
+				
+				createTable();
 			}
-			
-			createTable();
-		}
-	})
+		})
+	}
 })
 
 // 키워드로 검색

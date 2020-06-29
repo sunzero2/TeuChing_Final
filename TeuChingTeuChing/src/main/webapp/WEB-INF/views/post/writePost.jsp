@@ -139,8 +139,9 @@
 		var purpose;
 		var classSize;
 		var place;
+		var whether = ${data != null};
 		
-		if(${data != null}) {
+		if(whether) {
 			purpose = '${data.post.purpose}';
 			classSize = '${data.post.classSize}';
 			place = '${data.post.place}';
