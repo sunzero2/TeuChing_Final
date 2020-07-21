@@ -32,7 +32,7 @@
 					<ul class="list-unstyled">
 						<li><a href="http://52.78.116.59:8080/teuching/index/index.do">Home</a></li>
 						<li><a href="http://52.78.116.59:8080/teuching/index/aboutus.do">About</a></li>
-						<li><a href="http://52.78.116.59:8080/teuching/notice/notice.do?start=1&end=5">Notice</a></li>
+						<li><a href="http://52.78.116.59:8080/teuching/notice/notice.do?start=0&end=4">Notice</a></li>
 					</ul>
 				</div>
 			</div>

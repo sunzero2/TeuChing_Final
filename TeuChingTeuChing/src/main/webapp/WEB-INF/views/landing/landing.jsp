@@ -51,8 +51,7 @@
 <body>
 	<%@ include file="../include/top.jsp"%>
 	<section class="home-slider js-fullheight owl-carousel">
-		<div class="slider-item js-fullheight"
-			style="background-image: url(https://source.unsplash.com/collection/827737/1);">
+		<div class="slider-item js-fullheight" style="background-image: url(https://source.unsplash.com/collection/827737/1);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div
@@ -71,8 +70,7 @@
 			</div>
 		</div>
 
-		<div class="slider-item js-fullheight"
-			style="background-image: url(https://source.unsplash.com/collection/827737/2);">
+		<div class="slider-item js-fullheight" style="background-image: url(https://source.unsplash.com/collection/827737/2);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div

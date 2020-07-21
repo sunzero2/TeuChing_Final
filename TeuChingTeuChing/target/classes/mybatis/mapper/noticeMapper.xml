@@ -21,7 +21,7 @@
 	</select>
 	
 	<delete id="deleteNotice">
-		delete TR_NOTICE where notice_idx = #{noticeIdx}	
+		delete from TR_NOTICE where notice_idx = #{noticeIdx}	
 	</delete>
 	
 	<update id="updateNotice">

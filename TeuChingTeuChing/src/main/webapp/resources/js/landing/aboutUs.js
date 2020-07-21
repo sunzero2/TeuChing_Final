@@ -5,24 +5,17 @@ document.querySelectorAll('.slide_btn').forEach(function(el) {
 		move_text('true');
 		
 		index = el.id.substring(el.id.length - 1);
-		move_slide(--index).then(function(rgx) {
-			if(rgx == 'true') {
-				window.setTimeout(function() {
-					move_text('false');
-				}, 1500);
-			}
-		});
-	})
+		move_slide(--index);
+		window.setTimeout(function() {
+			move_text('false');
+		}, 1500);
+	});
 })
 
 function move_slide(idx) {
-	return new Promise(function(resolve, reject) {
-		document.querySelectorAll('.slide_common').forEach(function(el) {
-			el.style.transform = 'translateY(-' + (idx * 100) + 'vh)';
-			el.style.transitionDuration = '1.5s';
-		});
-		
-		resolve('true');
+	document.querySelectorAll('.slide_common').forEach(function(el) {
+		el.style.transform = 'translateY(-' + (idx * 100) + 'vh)';
+		el.style.transitionDuration = '1.5s';
 	});
 }
 

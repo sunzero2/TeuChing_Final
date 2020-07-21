@@ -84,9 +84,10 @@ document.getElementById("inputBtn").addEventListener('click', function(el) {
 				for(i = 0; i < v.length; i++) {
 					pList.push(v[i]);
 				}
-				
-				createTable();
 			}
+		})
+		.done(function() {
+			createTable();
 		})
 	}
 })
@@ -143,9 +144,10 @@ function keywordSearch() {
 			for(i = 0; i < v.length; i++) {
 				pList.push(v[i]);
 			}
-			
-			createTable();
 		}
+	})
+	.done(function() {
+		createTable();
 	})
 }
 

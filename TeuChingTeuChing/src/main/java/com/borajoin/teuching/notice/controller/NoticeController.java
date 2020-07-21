@@ -60,6 +60,7 @@ public class NoticeController {
 	* @Method 설명 : 게시글 작성 페이지로 이동하는 메소드
 	*/
 	@RequestMapping("/notice/write.do")
+	
 	public ModelAndView writePage(int noticeIdx) {
 		ModelAndView mav = new ModelAndView();
 		if(noticeIdx > 0) {
@@ -77,10 +78,11 @@ public class NoticeController {
 	* @Method 설명 : 공지사항 삭제 메소드
 	*/
 	@RequestMapping("/notice/delete.do")
+	
 	public ModelAndView deleteNotice(String noticeIdx) {
 		ModelAndView mav = new ModelAndView();
 		int res = noticeService.deleteNotice(noticeIdx);
-		mav.setViewName("redirect:/notice/notice.do?start=0&end=5");
+		mav.setViewName("redirect:/notice/notice.do?start=0&end=4");
 		return mav;
 	}
 	
@@ -91,6 +93,7 @@ public class NoticeController {
 	* @Method 설명 : 공지사항 추가 or 변경하는 메소드
 	*/
 	@RequestMapping("/notice/writeNotice.do")
+	
 	public ModelAndView write(Notice notice) {
 		ModelAndView mav = new ModelAndView();
 		int res = 0;
@@ -100,7 +103,7 @@ public class NoticeController {
 			res = insertNotice(notice);
 		}
 		
-		mav.setViewName("redirect:/notice/notice.do?start=0&end=5");
+		mav.setViewName("redirect:/notice/notice.do?start=0&end=4");
 		return mav;
 	}
 	
